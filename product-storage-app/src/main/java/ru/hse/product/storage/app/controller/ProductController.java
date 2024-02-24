@@ -1,6 +1,8 @@
 package ru.hse.product.storage.app.controller;
 
+import java.util.List;
 import java.util.UUID;
+
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -25,9 +27,11 @@ public class ProductController implements ProductApi {
 
   @Override
   @GetMapping
-  public ProductList findProducts(@RequestParam(required = false, defaultValue = "") String name) {
+  public ProductList findProducts(
+      @RequestParam(required = false, defaultValue = "") String name,
+      @RequestParam(required = false, name = "id") List<UUID> ids) {
     return new ProductList(
-        productService.findProducts(name).stream().map(productMapper::appDto2ApiDto).toList());
+        productService.findProducts(name, ids).stream().map(productMapper::appDto2ApiDto).toList());
   }
 
   @Override

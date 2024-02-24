@@ -9,6 +9,8 @@ public interface ProductRepository {
 
   List<Product> findByName(String name);
 
+  List<Product> findByNameAndIdIn(String name, List<UUID> ids);
+
   Product findById(UUID id);
 
   boolean existsById(UUID id);

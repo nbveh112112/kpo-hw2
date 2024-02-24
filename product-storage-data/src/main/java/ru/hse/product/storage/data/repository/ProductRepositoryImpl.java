@@ -39,6 +39,12 @@ public class ProductRepositoryImpl implements ProductRepository {
         PRODUCT_ROW_MAPPER, name);
   }
 
+  public List<Product> findByNameAndIdIn(String name, List<UUID> ids) {
+    return jdbcTemplate.query(
+        "select * from product where lower(name) like lower(concat('%',?,'%')) and id in ?",
+        PRODUCT_ROW_MAPPER, name, ids);
+  }
+
   @Override
   public Product findById(UUID id) {
     return jdbcTemplate.queryForObject("select * from product where id=?", PRODUCT_ROW_MAPPER, id);
