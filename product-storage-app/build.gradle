@@ -1,6 +1,11 @@
 apply plugin: 'org.springframework.boot'
 
 dependencies {
-
+    implementation(project(':product-storage-api'))
+    implementation(project(':product-storage-data'))
+    implementation(project(':product-storage-data-api'))
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui'
+    implementation 'org.mapstruct:mapstruct'
+    annotationProcessor('org.mapstruct:mapstruct-processor')
 }

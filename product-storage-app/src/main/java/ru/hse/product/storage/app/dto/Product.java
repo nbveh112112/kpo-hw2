@@ -1,8 +1,8 @@
-package ru.hse.product.storage.api.dto;
+package ru.hse.product.storage.app.dto;
 
-import lombok.Data;
-
+import java.net.URL;
 import java.util.UUID;
+import lombok.Data;
 
 @Data
 public class Product {

@@ -1,4 +1,4 @@
-package ru.hse.product.storage.api.dto;
+package ru.hse.product.storage.data.api.model;
 
 import lombok.Data;
 
@@ -11,7 +11,15 @@ public class Product {
 
   private String name;
 
+  private String description;
+
   private String imageUrl;
 
   private int price;
+
+  private int protein;
+
+  private int fat;
+
+  private int carbohydrate;
 }

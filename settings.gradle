@@ -9,3 +9,4 @@ pluginManagement {
 include('product-storage-api')
 include('product-storage-app')
 include('product-storage-data')
+include('product-storage-data-api')
